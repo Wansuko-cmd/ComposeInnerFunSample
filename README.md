@@ -47,9 +47,15 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun SampleIte
 
 # 実行するとどうなるか
 
+SampleItem1のみ`Recomosed!`のログが出力される
+
+https://github.com/user-attachments/assets/ce8fa1df-e1f5-415d-841d-16ad69180f18
+
 # Layout Inspector
 
 `SampleItem1`、`SampleItem2`の両方とも同じ挙動をとる
+
+https://github.com/user-attachments/assets/bb24d849-7576-4792-8758-f35c4508b64d
 
 # どのように解釈されているのか？
 
@@ -63,7 +69,9 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun SampleIte
    public static final void SampleItem2(@Nullable Composer $composer, final int $changed)
 ```
 
-比較
+関数は全てトップレベル（`MainActivityKt`クラス上）に定義されていたため、`SampleList`の`Recompose`時に`SampleItem1`を何度も定義するから・・・というわけではなさそう？
+
+### 比較
 
 - 命名の頭に`SampleList$`がつく（多分そこまで変わらない）
 - `changed`の値がfinalじゃなくなる（こっちが問題？）
