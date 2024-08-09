@@ -11,6 +11,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -43,7 +44,9 @@ class MainActivity : ComponentActivity() {
 fun SampleList(text: String) {
     @Composable
     fun SampleItem1() {
-        Log.d("SampleItem1", "Recomposed!")
+        SideEffect {
+            Log.d("SampleItem1", "Recomposed!")
+        }
         Text(text = "SampleItem1")
     }
     SampleItem1()
@@ -55,6 +58,8 @@ fun SampleList(text: String) {
 
 @Composable
 fun SampleItem2() {
-    Log.d("SampleItem2", "Recomposed!")
+    SideEffect {
+        Log.d("SampleItem2", "Recomposed!")
+    }
     Text(text = "SampleItem2")
 }
