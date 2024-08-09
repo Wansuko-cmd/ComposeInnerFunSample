@@ -9,7 +9,9 @@ Composeにて関数内関数を使った場合、Skippableになるかどうか�
 fun SampleList(text: String) {
     @Composable
     fun SampleItem1() {
-        Log.d("SampleItem1", "Recomposed!")
+        SideEffect {
+            Log.d("SampleItem1", "Recomposed!")
+        }
         Text(text = "SampleItem1")
     }
     SampleItem1()
@@ -21,7 +23,9 @@ fun SampleList(text: String) {
 
 @Composable
 fun SampleItem2() {
-    Log.d("SampleItem2", "Recomposed!")
+    SideEffect {
+        Log.d("SampleItem2", "Recomposed!")
+    }
     Text(text = "SampleItem2")
 }
 ```
@@ -59,5 +63,8 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun SampleIte
    public static final void SampleItem2(@Nullable Composer $composer, final int $changed)
 ```
 
+比較
+
 - 命名の頭に`SampleList$`がつく（多分そこまで変わらない）
 - `changed`の値がfinalじゃなくなる（こっちが問題？）
+- @Nullableがついていない（関係なさそう）
