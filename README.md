@@ -65,5 +65,7 @@ https://github.com/user-attachments/assets/bb24d849-7576-4792-8758-f35c4508b64d
    public static final void SampleItem2(@Nullable Composer $composer, final int $changed)
 ```
 
+関数は全てトップレベル（`MainActivityKt`クラス上）に定義されていたため、`SampleList`の`Recompose`時に`SampleItem1`を何度も定義するから・・・というわけではなさそう？
+
 - 命名の頭に`SampleList$`がつく（多分そこまで変わらない）
 - `changed`の値がfinalじゃなくなる（こっちが問題？）
