@@ -43,6 +43,8 @@ restartable skippable scheme("[androidx.compose.ui.UiComposable]") fun SampleIte
 
 # 実行するとどうなるか
 
+SampleItem1のみ`Recomosed!`のログが出力される
+
 # Layout Inspector
 
 `SampleItem1`、`SampleItem2`の両方とも同じ挙動をとる
